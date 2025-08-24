@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.circle-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: blueviolet; /* Background color for visibility */
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.pop-out-image {
+    position: absolute;
+    top: 40%; /* Start higher to allow overflow */
+    left: 50%; /* Center horizontally */
+    width: 100%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transform: translate(-50%, -50%) scale(1); /* Center the image */
+    transition: transform 0.3s ease; /* Smooth transition for the image */
+}
+
+/* Scale the image on hover */
+.circle-container:hover .pop-out-image {
+    transform: translate(-50%, -57%) scale(1.5); /* Scale up without moving down */
+}
